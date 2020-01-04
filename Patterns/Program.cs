@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Threading;
 namespace Patterns
 {
+    // entry point for viewing patterns
     public class Program
     {        
         public static void Main(string[] args)
