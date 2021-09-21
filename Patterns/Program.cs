@@ -14,7 +14,7 @@ namespace Patterns
         {
             //Stratagy();
             //Observer();
-            //Decorator();
+            Decorator();
             //AbstractFactory();
             //FactoryMethod();
             //Command();            
@@ -26,7 +26,7 @@ namespace Patterns
             //Builder();
             //Iterator();
 
-            Composite();
+            //Composite();
             Console.ReadLine();
         }
 
@@ -56,10 +56,17 @@ namespace Patterns
         /// </summary>        
         static void Decorator()
         {
-            Beverage beverage = new Coffee();
-            beverage = new Milk(beverage);
-            beverage = new Cream(beverage);
-            Console.WriteLine("{0} costs {1:C}$", beverage.Name, beverage.Cost());
+            var config = new Config();
+            Console.WriteLine($"OneDrive read from env vars: {config.GetSettingValue("OneDrive")}");
+            Console.WriteLine($"OneDrive read from cache: {config.GetSettingValue("OneDrive")}");
+            Console.WriteLine($"UnknownSetting read from DB: {config.GetSettingValue("UnknownSetting")}"); 
+            Console.WriteLine($"UnknownSetting read from cache: {config.GetSettingValue("UnknownSetting")}");
+
+
+            //Beverage beverage = new Coffee();
+            //beverage = new Milk(beverage);
+            //beverage = new Cream(beverage);
+            //Console.WriteLine("{0} costs {1:C}$", beverage.Name, beverage.Cost());
         }
 
         /// <summary>
