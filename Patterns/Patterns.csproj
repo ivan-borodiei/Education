@@ -75,6 +75,7 @@
     <Compile Include="Patterns\Decorator.cs" />
     <Compile Include="Patterns\Facade.cs" />
     <Compile Include="Patterns\Iterator.cs" />
+    <Compile Include="Patterns\Memento.cs" />
     <Compile Include="Patterns\Observer.cs" />
     <Compile Include="Patterns\Singleton.cs" />
     <Compile Include="Patterns\State.cs" />

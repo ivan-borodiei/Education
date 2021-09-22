@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Threading;
+using Patterns.Patterns;
+
 namespace Patterns
 {
     // entry point for viewing patterns
@@ -14,7 +16,7 @@ namespace Patterns
         {
             //Stratagy();
             //Observer();
-            Decorator();
+            //Decorator();
             //AbstractFactory();
             //FactoryMethod();
             //Command();            
@@ -27,6 +29,8 @@ namespace Patterns
             //Iterator();
 
             //Composite();
+            Memento();
+
             Console.ReadLine();
         }
 
@@ -223,6 +227,25 @@ namespace Patterns
             menu.PrintThroghIterator();
         }
 
+        private static void Memento()
+        {
+            var gamePlayer = new GamePlayer();
+            gamePlayer.DisplayGameInfo();
+            gamePlayer.PlayGame();
+            gamePlayer.DisplayGameInfo();
+            gamePlayer.PlayGame();
+            gamePlayer.DisplayGameInfo();
+            Console.WriteLine("Save game");
+            gamePlayer.F5();
+            gamePlayer.PlayGame();
+            gamePlayer.DisplayGameInfo();
+            gamePlayer.PlayGame();
+            gamePlayer.DisplayGameInfo();
+            Console.WriteLine("Load game");
+            gamePlayer.F9();
+            gamePlayer.DisplayGameInfo();
+
+        }
 
     }
 }
