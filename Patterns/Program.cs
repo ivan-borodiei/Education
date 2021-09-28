@@ -28,8 +28,8 @@ namespace Patterns
             //Builder();
             //Iterator();
 
-            //Composite();
-            Memento();
+            Composite();
+            //Memento();
 
             Console.ReadLine();
         }
@@ -194,6 +194,21 @@ namespace Patterns
         /// </summary>
         static void Composite()
         {
+            var candy = new Product("Candy", 10);
+            var chocolatte = new Product("Chocolatte", 20);
+            var sweetBox = new Box("SweetBox");
+            sweetBox.Add(candy);
+            sweetBox.Add(chocolatte);
+
+            var bread = new Product("Bread", 5);
+            var shoppingBasket = new Box("ShoppingBasket");
+            shoppingBasket.Add(bread);
+            shoppingBasket.Add(sweetBox);
+
+            Console.WriteLine("Overall price: {0}", shoppingBasket.Price);
+            return;
+
+            //---------------------------------------------------------------------
             IComposite menu = new Menu(){Name = "AllMenu"};
 
             //IComposite breakfastMenu = new Menu() { Name = "BreakfastMenu" };

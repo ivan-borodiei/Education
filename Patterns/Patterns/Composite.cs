@@ -1,11 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Patterns
 {
+    interface IComponent
+    {
+        string Name { get; }
+        int Price { get; }
+    }
+
+    class Product : IComponent
+    {
+        int price;
+        string name;
+
+        public int Price
+        {
+            get
+            {
+                return price;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public Product(string name, int price)
+        {
+            this.price = price;
+        }
+    }
+
+    class Box: IComponent
+    {
+        string name;
+        List<IComponent> componentList = new List<IComponent>();
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        public int Price
+        {
+            get
+            {
+                return componentList.Sum(c => c.Price);
+            }
+        }
+
+        public Box(string name)
+        {
+            this.name = name;
+        }
+
+        public void Add(IComponent component)
+        {
+            componentList.Add(component);
+        }
+
+    }
+
+    //---------------------------------------------------------------------------------------------------
     interface IComposite
     {
         string Name { get; set; }
